@@ -1,8 +1,12 @@
+import os
+
+
 class ExtractRequestFields(object):
     class Input:
+        SEARCHSTRING = "searchString"
         USER = "user"
         REQUEST_ID = "request_id"
-        VISIT_ID = "visitorId"
+        VISIT_ID = "visitor_id"
         USER_ID = "userId"
         MERCHANT = "merchant"
         MERCHANT_ID = "merchantId"
@@ -14,4 +18,4 @@ class ExceptionMessage(object):
 
 
 class Threshold(object):
-    THRESHOLD = 50
+    FUZZY_MATCH_THRESHOLD = os.environ.get("FUZZY_MATCH_THRESHOLD", 50)

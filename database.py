@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-logger = logging.getLogger("database")
+logger = logging.getLogger("database.py")
 logger.setLevel(logging.INFO)
 
 
@@ -47,7 +47,6 @@ def dsn_from_env():
 
 
 class DatabaseManager(object):
-
     def __new__(self):
         """
         Creates a Singleton Class for Database
